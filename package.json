@@ -1,0 +1,18 @@
+{
+  "name": "ShiftyWords",
+  "description": "Determine whether words can be shifted",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.8.x",
+    "npm":  "1.1.x"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-coffee": "0.6.4",
+    "grunt-contrib-clean": "0.4.0",
+    "grunt-contrib-watch": "0.2.0a"
+  }
+}
