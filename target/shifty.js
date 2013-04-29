@@ -4,7 +4,7 @@
   cp = require('child_process');
 
   isLetter = function(charCode) {
-    return (64 < charCode && charCode < 90);
+    return (64 < charCode && charCode < 91);
   };
 
   isVowel = function(charCode) {
@@ -19,8 +19,12 @@
     var charCode;
 
     charCode = char.charCodeAt(0);
-    if (isConsonant(charCode)) {
-      charCode--;
+    if (charCode === 90) {
+      charCode = 65;
+    } else {
+      if (isConsonant(charCode)) {
+        charCode++;
+      }
     }
     return String.fromCharCode(charCode);
   };
@@ -37,6 +41,8 @@
     }
     return _results;
   })()).join('');
+
+  console.log("Shifty word: " + shiftyWord);
 
   cp.exec("grep -i '^" + shiftyWord + "$' /usr/share/dict/words", function(error, result) {
     if (error != null) {
